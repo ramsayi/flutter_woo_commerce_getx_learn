@@ -9,7 +9,6 @@ class RoutePages {
     GetPage(
       name: "/",
       page: () => const LoginPage(),
-      binding: LoginBinding(),
     ),
     GetPage(
       name: "/splash",
