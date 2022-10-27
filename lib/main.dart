@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'common/routers/pages.dart';
+import 'common/routers/index.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // 路由
-      initialRoute: "/",
+      initialRoute: RouteNames.systemSplash,
       getPages: RoutePages.list,
+      navigatorObservers: [RoutePages.observer],
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
