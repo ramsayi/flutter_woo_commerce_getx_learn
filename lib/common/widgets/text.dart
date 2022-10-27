@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
+import '../index.dart';
 
 /// 文字组件
 class TextWidget extends StatelessWidget {
@@ -204,4 +204,6 @@ class TextWidget extends StatelessWidget {
       textAlign: textAlign,
     );
   }
+
+  paddingRight(double iconTextSmail) {}
 }
