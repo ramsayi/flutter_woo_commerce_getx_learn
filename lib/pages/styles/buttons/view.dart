@@ -105,19 +105,19 @@ class ButtonsPage extends GetView<ButtonsController> {
       )
           .tight(
             width: 100,
-            height: 50,
+            height: 60,
           )
           .paddingBottom(AppSpace.listRow),
 
       // textIcon, // 文字/图标
-      ButtonWidget.textIcon(
-        "Home",
-        IconWidget.svg(
-          AssetsSvgs.cHomeSvg,
-          size: 30,
-        ),
-        onTap: () {},
-      ).paddingBottom(AppSpace.listRow),
+      // ButtonWidget.textIcon(
+      //   "Home",
+      //   IconWidget.svg(
+      //     AssetsSvgs.cHomeSvg,
+      //     size: 30,
+      //   ),
+      //   onTap: () {},
+      // ).paddingBottom(AppSpace.listRow),
 
       //
     ].toColumn();
