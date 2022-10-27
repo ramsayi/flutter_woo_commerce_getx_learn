@@ -14,19 +14,24 @@ class StylesIndexPage extends GetView<StylesIndexController> {
         // 文本
         ListTile(
           onTap: () => Get.toNamed(RouteNames.stylesText),
-          title: const Text("Text 文本"),
+          title: const TextWidget.body1("Text 文本"),
+        ),
+        // Icon 图标
+        ListTile(
+          onTap: () => Get.toNamed(RouteNames.stylesIcon),
+          title: const TextWidget.body1("Icon 图标"),
         ),
         // 多语言
         ListTile(
           onTap: controller.onLanguageSelected,
-          title: Text(
+          title: TextWidget.body1(
             "语言 : ${ConfigService.to.locale.toLanguageTag()}",
           ),
         ),
         // 主题
         ListTile(
           onTap: controller.onThemeSelected,
-          title: Text("主题 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
+          title: TextWidget.body1("主题 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
         ),
       ],
     );
