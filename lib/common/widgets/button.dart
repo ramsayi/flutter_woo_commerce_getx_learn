@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
+
+import '../index.dart';
 
 enum ButtonWidgetType {
   none, // 无
