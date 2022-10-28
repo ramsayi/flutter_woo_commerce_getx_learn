@@ -6,7 +6,17 @@ class WelcomeController extends GetxController {
 
   List<WelcomeModel>? items;
 
-  _initData() {items = [
+  // 当前位置
+  int currentIndex = 0;
+
+  // 当前位置发生改变
+  void onPageChanged(int index) {
+    currentIndex = index;
+    update(['slider', 'bar']);
+  }
+
+  _initData() {
+    items = [
       WelcomeModel(
         image: AssetsImages.welcome_1Png,
         title: LocaleKeys.welcomeOneTitle.tr,
