@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
@@ -16,26 +17,52 @@ class WelcomePage extends GetView<WelcomeController> {
           ? const SizedBox()
           : WelcomeSliderWidget(
               controller.items!,
+              carouselController: controller.carouselController,
               onPageChanged: controller.onPageChanged,
             ),
     );
   }
 
-  // 控制栏
+  // bar
+  // skip + indicator + next
   Widget _buildBar() {
     return GetBuilder<WelcomeController>(
       id: "bar",
       init: controller,
       builder: (controller) {
-        return <Widget>[
-          // 指示标
-          SliderIndicatorWidget(
-            length: 3,
-            currentIndex: controller.currentIndex,
-          ),
-        ].toRow(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-        );
+        return controller.isShowStart
+            ?
+            // 开始
+            ButtonWidget.primary(
+                LocaleKeys.welcomeStart.tr,
+                onTap: controller.onToMain,
+              ).tight(
+                width: double.infinity,
+                height: 50.h,
+              )
+            : <Widget>[
+                // 跳过
+                ButtonWidget.text(
+                  LocaleKeys.welcomeSkip.tr,
+                  onTap: controller.onToMain,
+                  width: 80.w,
+                  height: 50.h,
+                ),
+                // 指示标
+                SliderIndicatorWidget(
+                  length: 3,
+                  currentIndex: controller.currentIndex,
+                ),
+                // 下一页
+                ButtonWidget.text(
+                  LocaleKeys.welcomeNext.tr,
+                  onTap: controller.onNext,
+                  width: 80.w,
+                  height: 50.h,
+                ),
+              ].toRow(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              );
       },
     );
   }
