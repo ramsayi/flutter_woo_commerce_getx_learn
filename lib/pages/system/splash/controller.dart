@@ -1,15 +1,22 @@
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
   SplashController();
 
-  _initData() {
-    FlutterNativeSplash.remove(); // 删除设备启动图
-    update(["splash"]);
-  }
+  // _initData() {
+  //   update(["splash"]);
+  // }
 
   void onTap() {}
+
+  _jumpToPage() {
+    // 欢迎页
+    Future.delayed(const Duration(seconds: 1), () {
+      Get.offAllNamed(RouteNames.systemWelcome);
+    });
+  }
 
   // @override
   // void onInit() {
@@ -19,7 +26,9 @@ class SplashController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    _initData();
+    FlutterNativeSplash.remove(); // 删除设备启动图
+    // _initData(); // 初始化数据
+    _jumpToPage(); // 跳转页面
   }
 
   // @override
