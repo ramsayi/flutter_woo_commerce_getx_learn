@@ -1,5 +1,6 @@
 class RouteNames {
   static const main = '/';
+
   static const cartApplyPromoCode = '/cart_apply_promo_code';
   static const cartBuyDone = '/cart_buy_done';
   static const cartBuyNow = '/cart_buy_now';
