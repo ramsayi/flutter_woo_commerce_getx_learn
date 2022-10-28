@@ -79,9 +79,7 @@ class LoginQuickPage extends GetView<LoginQuickController> {
             "Sign Up",
             textColor: const Color(0xff0274bc),
             textWeight: FontWeight.bold,
-            onTap: () {
-              Get.toNamed(RouteNames.systemSplash);
-            },
+            onTap: () {},
           ),
         ]
             .toRow(
