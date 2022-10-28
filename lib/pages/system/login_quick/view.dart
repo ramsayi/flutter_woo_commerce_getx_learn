@@ -58,7 +58,9 @@ class LoginQuickPage extends GetView<LoginQuickController> {
           "Sign In",
           backgroundColor: const Color(0xfffd8700),
           borderRadius: 18,
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(RouteNames.stylesStylesIndex);
+          },
         ).tight(
           width: double.infinity,
           height: 57,
@@ -77,7 +79,9 @@ class LoginQuickPage extends GetView<LoginQuickController> {
             "Sign Up",
             textColor: const Color(0xff0274bc),
             textWeight: FontWeight.bold,
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(RouteNames.systemSplash);
+            },
           ),
         ]
             .toRow(
