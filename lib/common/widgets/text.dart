@@ -204,6 +204,4 @@ class TextWidget extends StatelessWidget {
       textAlign: textAlign,
     );
   }
-
-  paddingRight(double iconTextSmail) {}
 }

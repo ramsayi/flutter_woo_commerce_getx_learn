@@ -15,12 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // 标题
       title: 'Flutter Demo',
       // 样式
       theme: ConfigService.to.isDarkModel ? AppTheme.dark : AppTheme.light,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // 调试模式的logo
       // 路由
-      initialRoute: RouteNames.stylesStylesIndex,
+      initialRoute: RouteNames.systemSplash,
       getPages: RoutePages.list,
       navigatorObservers: [RoutePages.observer],
       // 多语言
