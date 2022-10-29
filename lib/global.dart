@@ -16,9 +16,11 @@ class Global {
     // 初始化服务
     // Get.put<ConfigService>(ConfigService());
     // Get.put<WPHttpService>(WPHttpService());
+    // Get.put<UserService>(UserService());
     await Future.wait([
       Get.putAsync<ConfigService>(() async => await ConfigService().init()),
     ]).whenComplete(() {});
     Get.put<WPHttpService>(WPHttpService());
+    Get.put<UserService>(UserService());
   }
 }
