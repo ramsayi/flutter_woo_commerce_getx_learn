@@ -15,9 +15,7 @@ class RegisterPinPage extends GetView<RegisterPinController> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: <Widget>[
         // 提示文
-        TextWidget.body1(LocaleKeys.registerPinFormTip.tr)
-            .paddingBottom(20.w)
-            .alignLeft(),
+        TextWidget.body1(LocaleKeys.registerPinFormTip.tr).paddingBottom(20.w).alignLeft(),
 
         // pin
         PinPutWidget(
@@ -36,6 +34,8 @@ class RegisterPinPage extends GetView<RegisterPinController> {
         ButtonWidget.text(
           LocaleKeys.commonBottomCancel.tr,
           onTap: controller.onBtnBackup,
+          width: 1.sw,
+          height: 50.w,
         ),
 
         // end
@@ -60,7 +60,7 @@ class RegisterPinPage extends GetView<RegisterPinController> {
             crossAxisAlignment: CrossAxisAlignment.start,
           )
           .paddingHorizontal(AppSpace.page),
-    );
+    ).paddingOnly(top: 200.w);
   }
 
   @override
@@ -70,7 +70,7 @@ class RegisterPinPage extends GetView<RegisterPinController> {
       id: "register_pin",
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: const Text("register_pin")),
+          // appBar: AppBar(title: const Text("register_pin")),
           body: SafeArea(
             child: _buildView(),
           ),

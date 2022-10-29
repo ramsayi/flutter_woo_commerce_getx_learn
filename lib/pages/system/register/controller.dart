@@ -30,7 +30,7 @@ class RegisterController extends GetxController {
       var password = passwordController.text;
 
       //验证通过
-      Get.offNamed(
+      Get.offAllNamed(
         RouteNames.systemRegisterPin,
         arguments: UserRegisterReq(
           username: userNameController.text,
@@ -44,7 +44,9 @@ class RegisterController extends GetxController {
   }
 
   // 登录
-  void onSignIn() {}
+  void onSignIn() {
+    Get.offAllNamed(RouteNames.systemLogin);
+  }
 
   _initData() {
     update(["register"]);
