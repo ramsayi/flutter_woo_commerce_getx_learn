@@ -1,3 +1,4 @@
+import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
@@ -18,6 +19,9 @@ class MainController extends GetxController {
   void onReady() {
     super.onReady();
     _initData();
+
+    Get.toNamed(RouteNames.systemRegister);
+    // Get.toNamed(RouteNames.stylesStylesIndex);
   }
 
   // @override

@@ -92,7 +92,7 @@ class TextFormWidgetState extends State<TextFormWidget> {
                 },
                 icon: Icon(
                   _isShowObscureIcon == true ? Icons.visibility : Icons.visibility_off,
-                  size: 15,
+                  size: 25,
                   color: AppColors.surfaceVariant,
                 ),
               ),
