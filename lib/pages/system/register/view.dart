@@ -126,7 +126,7 @@ class RegisterPage extends GetView<RegisterController> {
             crossAxisAlignment: CrossAxisAlignment.start,
           )
           .paddingHorizontal(AppSpace.page),
-    ).alignCenter();
+    );
   }
 
   @override
