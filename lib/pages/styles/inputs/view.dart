@@ -14,7 +14,7 @@ class InputsPage extends GetView<InputsController> {
     );
   }
 
-    Widget _buildInputs() {
+  Widget _buildInputs() {
     return <Widget>[
       /// 文本
       const InputWidget.text(

@@ -30,7 +30,7 @@ class WPHttpService extends GetxService {
     _dio.interceptors.add(RequestInterceptors());
   }
 
-    Future<Response> get(
+  Future<Response> get(
     String url, {
     Map<String, dynamic>? params,
     Options? options,

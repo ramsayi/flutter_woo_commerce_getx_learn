@@ -54,7 +54,8 @@ class StylesIndexPage extends GetView<StylesIndexController> {
         // 主题
         ListTile(
           onTap: controller.onThemeSelected,
-          title: TextWidget.body1("主题 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
+          title: TextWidget.body1(
+              "主题 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
         ),
       ],
     );

@@ -9,7 +9,7 @@ class Loading {
   Loading() {
     EasyLoading.instance
       ..displayDuration = const Duration(milliseconds: _dismissMilliseconds) // 关闭延迟
-      ..indicatorType = EasyLoadingIndicatorType.ring // 指示器类型
+      ..indicatorType = EasyLoadingIndicatorType.doubleBounce // 指示器类型
       ..loadingStyle = EasyLoadingStyle.custom // loading样式 自定义
       ..indicatorSize = 35.0 // 指示器大小
       ..lineWidth = 2 // 进度条宽度
