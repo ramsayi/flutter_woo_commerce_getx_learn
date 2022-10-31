@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
@@ -29,15 +30,68 @@ class _MainPageState extends State<MainPage>
 class _MainViewGetX extends GetView<MainController> {
   const _MainViewGetX({Key? key}) : super(key: key);
 
-  Widget _buildView() {
-    return Center(
-      child: ButtonWidget.text(
-        "点击跳转到调试界面",
-        onTap: () {
-          Get.toNamed(RouteNames.stylesStylesIndex);
-        },
-        width: 200,
-        height: 50,
+	// 主视图
+	Widget _buildView() {
+    DateTime? lastPressedAt;
+    return WillPopScope(
+      // 防止连续点击两次退出
+      onWillPop: () async {
+        if (lastPressedAt == null ||
+            DateTime.now().difference(lastPressedAt!) >
+                const Duration(seconds: 1)) {
+          lastPressedAt = DateTime.now();
+          Loading.toast('Press again to exit');
+          return false;
+        }
+        await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+        return true;
+      },
+      child: Scaffold(
+        extendBody: true,
+        resizeToAvoidBottomInset: false,
+        // 导航栏
+        bottomNavigationBar: GetBuilder<MainController>(
+          id: 'navigation',
+          builder: (controller) {
+            return BuildNavigation(
+              currentIndex: controller.currentIndex,
+              items: [
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarHome.tr,
+                  icon: AssetsSvgs.navHomeSvg,
+                ),
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarCart.tr,
+                  icon: AssetsSvgs.navCartSvg,
+                  count: 3,
+                ),
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarMessage.tr,
+                  icon: AssetsSvgs.navMessageSvg,
+                  count: 9,
+                ),
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarProfile.tr,
+                  icon: AssetsSvgs.navProfileSvg,
+                ),
+              ],
+              onTap: controller.onJumpToPage, // 切换tab事件
+            );
+          },
+        ),
+        // 内容页
+        body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: controller.pageController,
+          onPageChanged: controller.onIndexChanged,
+          children: const [
+            // 加入空页面占位
+            Text("1"),
+            Text("2"),
+            Text("3"),
+            Text("4"),
+          ],
+        ),
       ),
     );
   }
