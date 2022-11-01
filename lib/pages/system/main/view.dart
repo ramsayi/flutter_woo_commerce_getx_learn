@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
+import 'package:flutter_woo_commerce_getx_learn/pages/index.dart';
 import 'package:get/get.dart';
-
-import 'index.dart';
 
 /// StatefulWidget 页面
 class MainPage extends StatefulWidget {
@@ -85,11 +84,10 @@ class _MainViewGetX extends GetView<MainController> {
           controller: controller.pageController,
           onPageChanged: controller.onIndexChanged,
           children: const [
-            // 加入空页面占位
-            Text("1"),
-            Text("2"),
-            Text("3"),
-            Text("4"),
+            HomePage(),
+            CartIndexPage(),
+            MsgIndexPage(),
+            MyIndexPage(),
           ],
         ),
       ),
@@ -101,14 +99,7 @@ class _MainViewGetX extends GetView<MainController> {
     return GetBuilder<MainController>(
       init: MainController(),
       id: "main",
-      builder: (_) {
-        return Scaffold(
-          appBar: AppBar(title: const Text("main")),
-          body: SafeArea(
-            child: _buildView(),
-          ),
-        );
-      },
+      builder: (_) => _buildView(),
     );
   }
 }
