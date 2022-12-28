@@ -7,11 +7,8 @@ export './kv.dart';
 
 export './request/user_register_req.dart';
 export './request/user_login_req.dart';
+export './request/product.dart';
 
-export './woo/user_profile_model/billing.dart';
-export './woo/user_profile_model/collection.dart';
-export './woo/user_profile_model/links.dart';
-export './woo/user_profile_model/meta_datum.dart';
-export './woo/user_profile_model/self.dart';
-export './woo/user_profile_model/shipping.dart';
 export './woo/user_profile_model/user_profile_model.dart';
+export './woo/product_model/product_model.dart';
+export './woo/category_model/category_model.dart';
